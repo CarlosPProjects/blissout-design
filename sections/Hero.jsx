@@ -22,6 +22,20 @@ const Hero = () => {
     });
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("touchmove", (event) => {
+      event.deltaY > 0
+        ? (setShow("mylk_top"),
+          setTest("the100_top"),
+          setTitle("THE 100%"),
+          setBackground("bot"))
+        : (setShow("mylk"),
+          setTest("the100"),
+          setTitle("MYLK"),
+          setBackground("top"));
+    });
+  }, []);
+
   return (
     <section className="h-full">
       <div
