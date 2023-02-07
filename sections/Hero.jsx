@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/styles/Hero.module.css";
 
 const Hero = () => {
@@ -23,18 +23,26 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("touchmove", (event) => {
-      event.deltaY > 0
-        ? (setShow("mylk_top"),
-          setTest("the100_top"),
-          setTitle("THE 100%"),
-          setBackground("bot"))
-        : (setShow("mylk"),
-          setTest("the100"),
-          setTitle("MYLK"),
-          setBackground("top"));
-    });
+    if (isMobile()) {
+      window.addEventListener("touchmove", (event) => {
+        event.deltaY > 0
+          ? (setShow("mylk_top"),
+            setTest("the100_top"),
+            setTitle("THE 100%"),
+            setBackground("bot"))
+          : (setShow("mylk"),
+            setTest("the100"),
+            setTitle("MYLK"),
+            setBackground("top"));
+      });
+    }
   }, []);
+
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  }
 
   return (
     <section className="h-full">
