@@ -1,0 +1,7 @@
+.close {
+    @apply -translate-x-72 opacity-0 duration-500 ease-in;
+}
+
+.open{
+    @apply translate-x-0 opacity-100 duration-500 ease-in;
+}

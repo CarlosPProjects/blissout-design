@@ -1,0 +1,24 @@
+.the100 {
+  @apply translate-y-full duration-500 ease-linear;
+}
+
+.the100_top {
+  @apply translate-y-0 duration-500 ease-linear;
+}
+
+.mylk {
+  @apply translate-y-0 duration-500 ease-linear;
+}
+
+.mylk_top {
+  @apply -translate-y-full duration-500 ease-linear;
+}
+.top {
+  background-image: url("/assets/MYLK_HOME.jpg");
+  @apply bg-cover;
+}
+.bot {
+  background-image: url("/assets/BLISSOUT_HOME_THE-100.jpg");
+  @apply bg-cover;
+}
+
